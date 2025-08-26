@@ -6,8 +6,10 @@ trimestre d’automne 2025
 .Matériel de cours de l’activité
 * Plan de l’activité (IFT723_2025-3.pdf)
 * Standard de programmation SQL (STD-SQL-01_NT.pdf)
-* Matériel de soutien classé par semaine de prestation (/S01 à /S12), disponible au fur et à mesure
-* Matériel du travail de session (/TS), à venir
+* Matériel de soutien classé par semaine de prestation (/S01 à /S12),
+  disponible au fur et à mesure
+* Matériel du travail de session (/TS),
+  à venir
 
 include::Foire aux questions.adoc[]
 
