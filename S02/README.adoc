@@ -1,0 +1,16 @@
+== S02
+
+=== 2025-09-03
+* Présentation de la théorie relationne et d'un modèle relationnel simpe
+* Lectures
+  - MCD_00-Préambule(au besoin)
+  - TRM_02-Fondements
+
+=== 2025-09-04
+* Présentation de la problématique des informations manquantes
+* Lectures
+  - Exemple_Evaluation
+  - TMR_07_Donnees-manquantes_PRE
+  - TMR_07-Logiques
+  - TMR_07_Donnees-manquantes_NOTES (au besoin)
+  - SQL_08-Operateurs-pour-les-nuls_PRE
