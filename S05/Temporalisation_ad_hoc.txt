@@ -1,0 +1,53 @@
+== Temporalisation ad hoc
+
+.État Actif/Inactif
+  * par tuplet
+    - create table Individu (cle, a1, .... , an, actif boolean default true, primary key (cle))
+  * par attribut
+    - non, car ce serait entrer dans la même problématique que l'annulabilité
+    - utiliser plutôt DPJ ou DRU.
+  * problématique du phénix (_phoenix_)
+
+.État courant depuis... (non-phénix)
+  * par tuplet
+    - create table Individu (cle, a1, .... , an, n Positif, debut T, fin T, primary key (cle, n))
+    - n représente le numéro de la vie du phénix
+    - DF cle, n -> (debut, fin)
+    ? fin indéterminée représenté par max(T) - ne pas oublier les problèmes associés (voir BCDM)
+    ? contrainte pour garantir la continuité de n
+    ? contrainte pour garantir continuité début et fin intra-tuple
+    ? contrainte pour garantir continuité début et fin inter-tuple
+  * par attribut
+    - voir VT DDLM !
+
+.État journalisé
+  * par tuplet
+    - create table Individu (cle, a1, .... , an, debut T primary key (cle))
+      create table Individu_log (cle, a1, .... , an, p intervalle de T, primary key (cle, p))
+    ! pas de contrainte supplémentaire dans la mesure d'une automatisation totale
+  * par attribut
+    - voir BT de DDLM
+
+== Perspectives et agents
+
+.Perspective du SGBD
+C’est le TT (temps de transaction, aussi appelé _log time_, _system time_).
+.Perspective de l’organisation
+C’est le VT (temps de validation, aussi appelé _application time_, user time_).
+
+.Double perspective
+C’est la bitemporalité VT-TT
+
+.Perspectives multiples ou agents
+Définir un axe de référence temporel VT par agent.
+L’agent est modélisé par un attribut scalaire de cardinalité adéquate.
+L’agent est ajouté à la clé de la relation.
+
+.La perspective du SGBD est-elle une perspective comme les autres ?
+Non !
+
+* Les estampilles temporelles sont déterminées par le SHBD sur la base du temps transactionnel.
+* Les tuplets ne sont modifiables qu’une fois, après insertion, pour en établir le moment de fin.
+* La gestion est totalement automatisée par le SGBD.
+* Les relations qui la représentent sont une vue du journal du SGBD.
+
