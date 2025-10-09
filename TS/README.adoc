@@ -1,0 +1,9 @@
+== TS
+
+=== 2025-10-08
+* Énoncé du travail de session
+
+=== 2025-10-09 (relâche universitaire, levée des cours)
+* Ajout des modules décrivant des interfaces machines-machines (IMM) génériques
+  - MLD_10-EMIR.pdf
+  - MLD_11-DVCT.pdf
