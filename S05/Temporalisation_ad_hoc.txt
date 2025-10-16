@@ -1,7 +1,7 @@
 == Temporalisation ad hoc
 
 .État Actif/Inactif
-  * par tuplet
+  * par tuple
     - create table Individu (cle, a1, .... , an, actif boolean default true, primary key (cle))
   * par attribut
     - non, car ce serait entrer dans la même problématique que l'annulabilité
@@ -9,7 +9,7 @@
   * problématique du phénix (_phoenix_)
 
 .État courant depuis... (non-phénix)
-  * par tuplet
+  * par tuple
     - create table Individu (cle, a1, .... , an, n Positif, debut T, fin T, primary key (cle, n))
     - n représente le numéro de la vie du phénix
     - DF cle, n -> (debut, fin)
@@ -21,7 +21,7 @@
     - voir VT DDLM !
 
 .État journalisé
-  * par tuplet
+  * par tuple
     - create table Individu (cle, a1, .... , an, debut T primary key (cle))
       create table Individu_log (cle, a1, .... , an, p intervalle de T, primary key (cle, p))
     ! pas de contrainte supplémentaire dans la mesure d'une automatisation totale
@@ -47,7 +47,7 @@ L’agent est ajouté à la clé de la relation.
 Non !
 
 * Les estampilles temporelles sont déterminées par le SHBD sur la base du temps transactionnel.
-* Les tuplets ne sont modifiables qu’une fois, après insertion, pour en établir le moment de fin.
+* Les tuples ne sont modifiables qu’une fois, après insertion, pour en établir le moment de fin.
 * La gestion est totalement automatisée par le SGBD.
 * Les relations qui la représentent sont une vue du journal du SGBD.
 
