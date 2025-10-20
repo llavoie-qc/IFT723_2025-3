@@ -12,4 +12,3 @@ trimestre d’automne 2025
   à venir
 
 include::Foire aux questions.adoc[]
-
